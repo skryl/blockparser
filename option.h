@@ -48,7 +48,7 @@
  * parser.add_option("-q", "--quiet")
  *                   .action("store_false") .dest("verbose") .set_default("1")
  *                   .help("don't print status messages to stdout");
- * 
+ *
  * optparse::Values options = parser.parse_args(argc, argv);
  * vector<string> args = parser.args();
  *
@@ -100,6 +100,7 @@ class Value {
     operator float() { float t; return (valid && (std::istringstream(str) >> t)) ? t : 0; }
     operator double() { double t; return (valid && (std::istringstream(str) >> t)) ? t : 0; }
     operator long double() { long double t; return (valid && (std::istringstream(str) >> t)) ? t : 0; }
+    operator long long() { long long t; return (valid && (std::istringstream(str) >> t)) ? t : 0; }
  private:
     const std::string str;
     bool valid;

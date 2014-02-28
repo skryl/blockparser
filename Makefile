@@ -2,7 +2,7 @@
 SHELL=/bin/sh
 MAKEFLAGS=-j8
 
-CPLUS = g++
+CPLUS = g++-4.7
 
 INC =                           \
         -I.                     \
@@ -179,7 +179,7 @@ OBJS=                       \
     .objs/util.o            \
 
 parser:${OBJS}
-	@echo lnk -- parser 
+	@echo lnk -- parser
 	@${CPLUS} ${LOPT} ${COPT} -o parser ${OBJS} ${LIBS}
 
 clean:
